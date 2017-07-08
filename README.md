@@ -5,7 +5,7 @@ communication across user processes.
 
 # Background   (Raison D'etre)
 One of my friends has a dental practice that uses a poorly written client/server 
-software.  The server software is running on a Microsoft Windows Server, and  
+software.  The server software is running on a Microsoft Windows Server, and 
 it handles requests from client software running on Windows workstations.  The 
 server was written as a user application that has to be manually started by 
 logging into the Windows Server and clicking on the server application.  When 
