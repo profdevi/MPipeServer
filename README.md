@@ -5,7 +5,7 @@ communication across user processes.
 
 # Background   (Raison D'etre)
 One of my friends has a dental practice that uses a poorly written client/server 
-software.  The server software is running on a Microsoft Windows Server, and 
+software.  The server software is running on a Microsoft Windows Server, and  
 it handles requests from client software running on Windows workstations.  The 
 server was written as a user application that has to be manually started by 
 logging into the Windows Server and clicking on the server application.  When 
@@ -31,6 +31,15 @@ communicating requests between processes.  The code of this project uses
 reusable components for Interprocess communication using named pipes, as 
 well manipulating the security elements found in the Windows Operating System.
 
+
+# Download Links 
+
+The following links is for the direct download of the 32 bit executable with
+an MD5 digest of the executable.
+
+Windows 32-bit Binary : [MPipeServer.exe](bin/MPipeServer.exe)
+
+MD5 Digest for binary : [MPipeServer.exe.md5](bin/MPipeServer.exe.md5)
 
 
          
