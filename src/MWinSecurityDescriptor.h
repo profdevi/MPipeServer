@@ -18,7 +18,7 @@
 */
 
 
-//v1.2 copyright Comine.com 20170708S1323
+//v1.3 copyright Comine.com 20170711S1323
 #ifndef MWinSecurityDescriptor_h
 #define MWinSecurityDescriptor_h
 

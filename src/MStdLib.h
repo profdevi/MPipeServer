@@ -18,7 +18,7 @@
 */
 
 
-//v2.16 copyright Comine.com 20170634S1935
+//v2.17 copyright Comine.com 20170709U0636
 #ifndef MStdLib_h
 #define MStdLib_h
 
@@ -632,6 +632,7 @@ extern const double MStdLibConstPi;
 //////////////////////////////////////////////////
 // Platform Specific Information
 bool MStdGetMachineName(char *buffer,int bufferlen);
+unsigned int MStdGetProcessID(void);							// Get Current Process ID
 bool MStdGetOSRoot(char *buffer,int bufferlen);					// returns: "c:/" or "/" based on os
 bool MStdGetOSPathSeperator(char *buffer,int bufferlen);		// returns: ";" or ":"
 bool MStdIsUnix(void);											//=true if UNIX like OS (Linux,...)

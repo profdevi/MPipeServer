@@ -18,7 +18,7 @@
 */
 
 
-//v1.2 copyright Comine.com 20170708S1323
+//v1.3 copyright Comine.com 20170711S1323
 #include <windows.h>
 #include <AccCtrl.h>
 #include <AclAPI.h>
@@ -66,25 +66,25 @@ bool MWinSecurityDescriptor::Create(void)
 		return false;
 		}
 
-	if(currenttoken.AddPrivilege(SE_TAKE_OWNERSHIP_NAME)==false)
+	if(currenttoken.EnablePrivilege(SE_TAKE_OWNERSHIP_NAME,true)==false)
 		{
 		Destroy();
 		return false;
 		}
 
-	if(currenttoken.AddPrivilege(SE_RESTORE_NAME)==false)
+	if(currenttoken.EnablePrivilege(SE_RESTORE_NAME,true)==false)
 		{
 		Destroy();
 		return false;
 		}
 
-	if(currenttoken.AddPrivilege(SE_BACKUP_NAME)==false)
+	if(currenttoken.EnablePrivilege(SE_BACKUP_NAME,true)==false)
 		{
 		Destroy();
 		return false;
 		}
 
-	if(currenttoken.AddPrivilege(SE_CHANGE_NOTIFY_NAME)==false)
+	if(currenttoken.EnablePrivilege(SE_CHANGE_NOTIFY_NAME,true)==false)
 		{
 		Destroy();
 		return false;

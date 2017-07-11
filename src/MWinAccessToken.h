@@ -18,7 +18,7 @@
 */
 
 
-//v1.6 copyright Comine.com 20170418T1028
+//v1.7 copyright Comine.com 20170717T1434
 #ifndef MWinAccessToken_h
 #define MWinAccessToken_h
 
@@ -26,6 +26,7 @@
 #include <windows.h>
 #include "MStdLib.h"
 #include "MString.h"
+#include "MWinPrivilegeSet.h"
 
 //******************************************************
 //**  MWinAccessToken class
@@ -42,15 +43,16 @@ class MWinAccessToken
 	public:
 	MWinAccessToken(void);
 	~MWinAccessToken(void);
-	bool Create(DWORD access=TOKEN_WRITE | TOKEN_QUERY);								// Get Current Process Handle
+	bool Create(DWORD access=TOKEN_WRITE | TOKEN_QUERY);				// Get Current Process Handle
 	bool Create(HANDLE haccesstoken,bool takeownship=false);
 	bool Destroy(void);
-	bool AddPrivilege(const wchar_t *privledge);	// Add a privledge
-	bool DelPrivilege(const wchar_t *privledge);	// Once a priv is removed, it may not be added(some os)
+	bool EnablePrivilege(const wchar_t *privledge,bool enable=true);	// Enable/Disbale a privledge
 	bool HasPrivilege(const wchar_t *privledge);	//=true if privledge is held
-	bool RemoveAllPrivileges(void);					// Remove All Privledges from current token
-	bool GetOwner(MString &owner,SID_NAME_USE &usertype);		// Get Owner
+	bool DisableAllPrivileges(void);				// Remove All Privledges from current token
+	bool GetOwner(MString &owner,SID_NAME_USE &usertype);				// Get Owner
 	bool Print(void);								// Print Info about current access Token Privledges
+	bool GetPrivileges(MWinPrivilegeSet &privs);	// Get Current privileges
+	bool SetPrivileges(MWinPrivilegeSet &privs);	// Set New Privileges
 	};
 
 #endif // MWinAccessToken_h

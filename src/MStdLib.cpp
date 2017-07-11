@@ -18,7 +18,7 @@
 */
 
 
-//v2.16 copyright Comine.com 20170634S1935
+//v2.17 copyright Comine.com 20170709U0636
 /*
 Bug Notice:
 	MStdSPrintf(const wchar_t *)  seems to be failing.
@@ -2338,6 +2338,21 @@ bool MStdGetMachineName(char *buffer,int bufferlen)
 	return true;
 
 	#endif
+	}
+
+
+//////////////////////////////////////////////////////////
+unsigned int MStdGetProcessID(void)
+	{
+	#if ( defined(MSTDLIB_OS_WINDOWSRT) || defined(MSTDLIB_OS_WINDOWS) || defined(MSTDLIB_OS_WINDOWSOLD) || defined(MSTDLIB_OS_MINGW) )
+	return (unsigned int)GetCurrentProcessId();
+
+	////////////////////////////////////////
+	#elif ( defined(MSTDLIB_OS_LINUX) || defined(MSTDLIB_OS_OTHER) || defined(MSTDLIB_OS_MACOS) || defined(MSTDLIB_OS_IPHONE) )
+
+	return (unsigned int) getpid();
+
+	#endif	
 	}
 
 
